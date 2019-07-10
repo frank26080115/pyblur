@@ -1,5 +1,13 @@
 #Pyblur
+
+##Fork by frank26080115
+
+Solved compatibility issue with Python3, following instructions from https://github.com/lospooky/pyblur/issues/5
+
+Capable of using insanely large kernel size, https://github.com/lospooky/pyblur/issues/1
+
 ##Python image blurring routines.
+
 Pyblur is a collection of simple image blurring routines.<br>
 It supports Gaussian, Disk, Box, and Linear Motion Blur Kernels as well as the Point Spread Functions
 used in [Convolutional Neural Networks for Direct Text Deblurring](http://www.fit.vutbr.cz/~ihradis/CNN-Deblur/).<br>

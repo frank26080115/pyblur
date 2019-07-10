@@ -5,6 +5,10 @@ class LineDictionary:
         self.Create5x5Lines()
         self.Create7x7Lines()
         self.Create9x9Lines()
+        n = 11
+        while n < 1000:
+            self.createNxNLines(n)
+            n += 2
         return
     
     def Create3x3Lines(self):
@@ -65,4 +69,28 @@ class LineDictionary:
         lines[157.5] = [2,0,6,8]
         lines[168.75] = [3,0,5,8]
         self.lines[9] = lines
+        return
+
+    def createNxNLines(self, n):
+        lines={}
+        Num=2*n-2
+        angle_unit=180.0/Num
+        cnt=0
+        for i in range(int((n-1)/2), int(n)):
+            j=0
+            lines[cnt*angle_unit]=[i, j, n-1-i, n-1-j]
+            cnt+=1
+        for j in range(1,int((n+1)/2)):
+            i=n-1
+            lines[cnt*angle_unit]=[i,j,n-1-i,n-1-j]
+            cnt+=1
+        for j in range(int((n+1)/2),n):
+            i=n-1
+            lines[cnt*angle_unit]=[n-1-i, n-1-j, i, j]
+            cnt+=1
+        for i in range(1, int((n-1)/2)):
+            j=0
+            lines[cnt*angle_unit]=[i,j,n-1-i,n-1-j]
+            cnt+=1
+        self.lines[n]=lines
         return
